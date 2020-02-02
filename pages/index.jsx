@@ -230,7 +230,7 @@ export const Index = ({}) => {
           top: calc(68px * 2);
           left: 50%;
           transform: translateX(-50%);
-          width: calc(100% - 1em);
+          width: calc(100% - 68px);
         }
 
         .tool {
@@ -320,7 +320,7 @@ export const Index = ({}) => {
         }
 
         .header-seq {
-          font-size: 5em;
+          font-size: 4em;
           font-weight: bolder;
           text-align: center;
         }
