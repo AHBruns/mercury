@@ -9,7 +9,9 @@ export const Header = ({}) => {
           <p className="mah-name">Home</p>
         </Link>
         <div className="middle-spacer" />
-        <Button compressed>Download My Resume</Button>
+        <Button compressed download="/AlexBrunsResume.pdf">
+          Download My Resume
+        </Button>
       </div>
       <style jsx>{`
         .header-wrapper {

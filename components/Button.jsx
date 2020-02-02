@@ -1,7 +1,7 @@
 import Head from "next/head";
 import theme from "../constants/theme";
 
-export const Button = ({ compressed, secondary, children }) => {
+export const Button = ({ compressed, secondary, download, children }) => {
   return (
     <>
       <Head>
@@ -10,7 +10,9 @@ export const Button = ({ compressed, secondary, children }) => {
           rel="stylesheet"
         />
       </Head>
-      <button className="button">{children}</button>
+      <button className="button" onClick={() => window.open(download)}>
+        {children}
+      </button>
       <style jsx>{`
         .button {
           border: none;
