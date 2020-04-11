@@ -9,7 +9,7 @@ const staticProps = {
     { text: "Portfolio", href: "/portfolio" },
     // { text: "Projects", href: "/projects" },
     { text: "Skills", href: "/skills" },
-    { text: "Résumé", href: "/resume.pdf" },
+    { text: "Résumé", href: "/alex-bruns-resume.pdf" },
     // { text: "Contact Me", href: "/contact-me" },
   ],
 };
