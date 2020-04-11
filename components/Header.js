@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default ({ data }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -52,13 +53,15 @@ export default ({ data }) => {
       >
         <nav className={`flex flex-col p-3`}>
           {data.map((item) => (
-            <a
-              key={JSON.stringify(item)}
-              href={item.href}
-              className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
-            >
-              {item.text}
-            </a>
+            <Link href={item.href}>
+              <a
+                key={JSON.stringify(item)}
+                onClick={() => setMenuIsOpen(!menuIsOpen)}
+                className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+              >
+                {item.text}
+              </a>
+            </Link>
           ))}
         </nav>
       </div>

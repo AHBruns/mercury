@@ -8,8 +8,8 @@ const staticProps = {
     { text: "Home", href: "/" },
     { text: "Portfolio", href: "/portfolio" },
     // { text: "Projects", href: "/projects" },
-    // { text: "Tools", href: "/tools" },
-    { text: "My Résumé", href: "/resume.pdf" },
+    { text: "Skills", href: "/skills" },
+    { text: "Résumé", href: "/resume.pdf" },
     // { text: "Contact Me", href: "/contact-me" },
   ],
 };
