@@ -52,17 +52,28 @@ export default ({ data }) => {
         }`}
       >
         <nav className={`flex flex-col p-3`}>
-          {data.map((item) => (
-            <Link href={item.href}>
+          {data.map((item) =>
+            item.text !== "Résumé" ? (
+              <Link href={item.href} key={JSON.stringify(item)}>
+                <a
+                  key={JSON.stringify(item)}
+                  onClick={() => setMenuIsOpen(!menuIsOpen)}
+                  className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+                >
+                  {item.text}
+                </a>
+              </Link>
+            ) : (
               <a
                 key={JSON.stringify(item)}
+                href={item.href}
                 onClick={() => setMenuIsOpen(!menuIsOpen)}
                 className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
               >
                 {item.text}
               </a>
-            </Link>
-          ))}
+            )
+          )}
         </nav>
       </div>
     </>
