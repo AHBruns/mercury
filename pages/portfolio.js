@@ -97,7 +97,7 @@ export default ({}) => {
           title="Texas Coastal Exchange Dontation Portal"
           src="https://donate.texascoastalexchange.org"
         />
-        <Section title="This Site (Inception!)" src="http://localhost:3000" />
+        <Section title="This Site (Inception!)" src="http://alexbruns.dev" />
         <div className="h-20" />
       </div>
     </div>
