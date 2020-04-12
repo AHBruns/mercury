@@ -6,6 +6,22 @@ body {
   background-color: #f7fafc;
 }
 
-.--chrome-transition-bug-fix {
-  -webkit-transform: translateZ(0);
+textarea::-webkit-resizer {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.textarea-dragger {
+  position: relative;
+}
+
+.textarea-dragger::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  right: 0.375rem;
+  bottom: calc(6px + 0.375rem);
+  border-radius: 50%;
+  background-color: #1a202c;
+  pointer-events: none;
 }

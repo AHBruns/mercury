@@ -2,7 +2,7 @@ import React from "react";
 
 export default () => {
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen pt-32 -mt-32 bg-gray-100">
+    <div className="flex flex-col items-center justify-center flex-1 w-screen bg-gray-100">
       <h1 className="text-6xl font-bold">
         <span className="text-blue-600">Alex</span>&nbsp;
         <span className="text-gray-700">Bruns</span>

@@ -5,7 +5,7 @@ export default ({ data }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
-    <>
+    <div className="relative">
       <nav className="sticky top-0 left-0 right-0 z-20 flex flex-wrap p-3 bg-gray-900">
         <button
           className="z-20 flex items-center justify-center p-3 m-3 text-gray-100 transition-all duration-1000 ease-in-out transform bg-gray-800 rounded-md focus:outline-none hover:rounded-full hover:rotate-180 focus:bg-gray-700"
@@ -47,7 +47,7 @@ export default ({ data }) => {
         </button>
       </nav>
       <div
-        className={`fixed p-3 bg-gray-900 w-full transition-all ease-in-out duration-1000 border-gray-800 border-t-2 border-solid block shadow-2xl transform ${
+        className={`absolute p-3 bg-gray-900 w-full transition-all ease-in-out duration-1000 border-gray-800 border-t-2 border-solid block shadow-2xl transform ${
           menuIsOpen ? "translate-y-0 -mb-0" : "-translate-y-full -mb-32"
         }`}
       >
@@ -76,6 +76,6 @@ export default ({ data }) => {
           )}
         </nav>
       </div>
-    </>
+    </div>
   );
 };

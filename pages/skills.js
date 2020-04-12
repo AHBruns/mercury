@@ -1,27 +1,9 @@
-import React, { useState, useEffect } from "react";
-
-const shuffle = (array) => {
-  var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
-};
+import React, { useState } from "react";
 
 export default ({ skills, tags }) => {
   const [pickedTags, setPickedTags] = useState([]);
   const [unpickedTags, setUnpickedTags] = useState([...tags]);
   const [filteringIsOpen, setFilteringIsOpen] = useState(false);
-
-  useEffect(() => {
-    shuffle(skills);
-  }, [skills]);
 
   return (
     <div>
@@ -136,7 +118,7 @@ export default ({ skills, tags }) => {
           .map((skill) => {
             return (
               <div className="p-2" key={skill.name}>
-                <div className="px-2 py-1 bg-blue-500 rounded-lg hover:bg-blue-400 focus:bg-blue-600 hover:shadow-lg">
+                <div className="px-2 py-1 text-gray-900 bg-blue-500 rounded-lg shadow-sm hover:bg-blue-400 focus:bg-blue-600 hover:shadow-lg">
                   <h1>{skill.name}</h1>
                 </div>
               </div>
@@ -149,6 +131,20 @@ export default ({ skills, tags }) => {
 };
 
 export const getStaticProps = async () => {
+  const shuffle = (array) => {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  };
+
   const skills = [
     {
       name: "React",
@@ -434,7 +430,65 @@ export const getStaticProps = async () => {
       name: "Now.sh",
       tags: ["Platform"],
     },
+    {
+      name: "VSCode",
+      tags: ["IDE"],
+    },
+    {
+      name: "WebStorm",
+      tags: ["IDE"],
+    },
+    {
+      name: "Jet Brains",
+      tags: ["IDE"],
+    },
+    {
+      name: "IntelliJ",
+      tags: ["IDE"],
+    },
+    {
+      name: "PyCharm",
+      tags: ["IDE"],
+    },
+    {
+      name: "Visual Studio",
+      tags: ["IDE"],
+    },
+    {
+      name: "Linux",
+      tags: ["OS"],
+    },
+    {
+      name: "Ubuntu",
+      tags: ["OS"],
+    },
+    {
+      name: "Debian",
+      tags: ["OS"],
+    },
+    {
+      name: "Open BSD",
+      tags: ["OS"],
+    },
+    {
+      name: "OSX",
+      tags: ["OS"],
+    },
+    {
+      name: "Windows",
+      tags: ["OS"],
+    },
+    {
+      name: "Postman",
+      tags: ["API"],
+    },
+    {
+      name: "NPM",
+      tags: ["JS", "Web", "Platform"],
+    },
   ];
+
+  shuffle(skills);
 
   let tags = new Set();
   skills.forEach((skill) => {
