@@ -5,3 +5,7 @@
 body {
   background-color: #f7fafc;
 }
+
+.--chrome-transition-bug-fix {
+  -webkit-transform: translateZ(0);
+}
