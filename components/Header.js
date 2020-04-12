@@ -47,7 +47,7 @@ export default ({ data }) => {
         </button>
       </nav>
       <div
-        className={`fixed p-3 bg-gray-900 w-full transition-all ease-in-out duration-1000 border-gray-800 border-t-2 border-solid block shadow-2xl transform --chrome-transition-bug-fix ${
+        className={`fixed p-3 bg-gray-900 w-full transition-all ease-in-out duration-1000 border-gray-800 border-t-2 border-solid block shadow-2xl transform ${
           menuIsOpen ? "translate-y-0 -mb-0" : "-translate-y-full -mb-32"
         }`}
       >
