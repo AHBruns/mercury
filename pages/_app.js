@@ -19,6 +19,7 @@ export default ({ Component, pageProps }) => {
     <>
       <Header data={staticProps.navBar} />
       <Component {...pageProps} />
+      <script> </script>
     </>
   );
 };
