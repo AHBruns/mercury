@@ -1,6 +1,21 @@
 import React from "react";
 
+const shuffle = (array) => {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+};
+
 export default ({ skills }) => {
+  shuffle(skills);
   return (
     <div>
       <div className="flex flex-col justify-center w-full max-w-6xl px-2 pt-10 mx-auto">
@@ -33,29 +48,9 @@ export default ({ skills }) => {
 };
 
 export const getStaticProps = async () => {
-  function shuffle(array) {
-    var currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
-
   return {
     props: {
-      skills: shuffle([
+      skills: [
         {
           name: "React",
           tags: ["JS", "Framework", "Web"],
@@ -288,7 +283,7 @@ export const getStaticProps = async () => {
           name: "Protobuff",
           tags: ["Framework"],
         },
-      ]),
+      ],
     },
   };
 };
