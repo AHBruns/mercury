@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-export default ({ data }) => {
+export default ({ data, projects }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [projectsIsOpen, setProjectsIsOpen] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <nav className="sticky top-0 left-0 right-0 z-20 flex flex-wrap p-3 bg-gray-900">
         <button
           className="z-20 flex items-center justify-center p-3 m-3 text-gray-100 transition-all duration-1000 ease-in-out transform bg-gray-800 rounded-md focus:outline-none hover:rounded-full hover:rotate-180 focus:bg-gray-700"
@@ -52,28 +53,47 @@ export default ({ data }) => {
         }`}
       >
         <nav className={`flex flex-col p-3`}>
-          {data.map((item) =>
-            item.text !== "Résumé" ? (
-              <Link href={item.href} key={JSON.stringify(item)}>
-                <a
-                  key={JSON.stringify(item)}
-                  onClick={() => setMenuIsOpen(!menuIsOpen)}
-                  className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
-                >
-                  {item.text}
-                </a>
-              </Link>
-            ) : (
+          {data.map((item) => (
+            <Link href={item.href} key={JSON.stringify(item)}>
               <a
                 key={JSON.stringify(item)}
-                href={item.href}
                 onClick={() => setMenuIsOpen(!menuIsOpen)}
                 className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
               >
                 {item.text}
               </a>
-            )
-          )}
+            </Link>
+          ))}
+          {
+            <div
+              onMouseEnter={() => setProjectsIsOpen(true)}
+              onMouseLeave={() => setProjectsIsOpen(false)}
+              className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+            >
+              <a key={"Projects"} className="">
+                Projects
+              </a>
+              <ul
+                className={`transition-all duration-1000 ease-in-out transform ${
+                  projectsIsOpen
+                    ? "h-10 scale-y-100 opacity-100"
+                    : "h-0 scale-y-0 opacity-0"
+                }`}
+              >
+                {projects.map((item) => (
+                  <Link href={item.href} key={JSON.stringify(item)}>
+                    <a
+                      key={JSON.stringify(item)}
+                      onClick={() => setMenuIsOpen(!menuIsOpen)}
+                      className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+                    >
+                      <li className="ml-2 list-disc">{item.text}</li>
+                    </a>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          }
         </nav>
       </div>
     </div>

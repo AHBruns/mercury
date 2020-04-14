@@ -25,3 +25,12 @@ textarea::-webkit-resizer {
   background-color: #1a202c;
   pointer-events: none;
 }
+
+.game-of-life-custom-inner-shadow {
+  pointer-events: none;
+  box-shadow: inset 0px 0px 35px 75px rgb(247, 250, 252);
+}
+
+.stop-drag {
+  user-select: none;
+}

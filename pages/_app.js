@@ -11,12 +11,13 @@ const staticProps = {
     { text: "Résumé", href: "/alex-bruns-resume.pdf" },
     { text: "Contact Me", href: "/contact-me" },
   ],
+  projects: [{ text: "Conway's Game of Life", href: "/game-of-life" }],
 };
 
 export default ({ Component, pageProps }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header data={staticProps.navBar} />
+      <Header data={staticProps.navBar} projects={staticProps.projects} />
       <Component {...pageProps} />
       <script> </script>
     </div>
