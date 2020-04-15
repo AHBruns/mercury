@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import Head from "next/head";
 import "../tailwind.css";
 
 // TODO: place in getStaticProps once NextJS supports it
@@ -16,10 +17,15 @@ const staticProps = {
 
 export default ({ Component, pageProps }) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header data={staticProps.navBar} projects={staticProps.projects} />
-      <Component {...pageProps} />
-      <script> </script>
-    </div>
+    <>
+      <Head>
+        <title>Alex Bruns</title>
+      </Head>
+      <div className="flex flex-col min-h-screen">
+        <Header data={staticProps.navBar} projects={staticProps.projects} />
+        <Component {...pageProps} />
+        <script> </script>
+      </div>
+    </>
   );
 };
