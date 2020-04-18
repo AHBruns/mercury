@@ -50,7 +50,10 @@ export default () => {
         {status === "SUCCESS" ? (
           <p className="mt-6 text-gray-100">Thanks!</p>
         ) : (
-          <button className="p-2 mt-6 text-gray-100 bg-blue-600 rounded-md shadow-md focus:outline-none focus:bg-blue-700 hover:bg-blue-500">
+          <button
+            aria-label="submit"
+            className="p-2 mt-6 text-gray-100 bg-blue-600 rounded-md shadow-md focus:outline-none focus:bg-blue-700 hover:bg-blue-500"
+          >
             Submit
           </button>
         )}

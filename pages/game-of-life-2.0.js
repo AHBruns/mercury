@@ -205,6 +205,7 @@ const GOL = () => {
           <h1>The simulation was restarted because it devolved into a loop.</h1>
         </div>
         <button
+          aria-label="restart"
           className="absolute bottom-0 left-0 p-2 m-4 font-semibold tracking-widest text-gray-100 transition-transform duration-300 ease-in transform bg-gray-900 rounded-full shadow-lg focus:outline-none focus:bg-gray-700 text-md sm:text-xl hover:bg-gray-800 hover:scale-110"
           onClick={() => setReset(reset + 1)}
         >
@@ -247,6 +248,7 @@ const GOL = () => {
                 set created by John Horton Conway. The rules can be found on
                 wikipedia{" "}
                 <a
+                  aria-label={"game of life wikipedia"}
                   className="text-blue-400"
                   href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
                 >
@@ -260,6 +262,7 @@ const GOL = () => {
                 the underlying hardware on which the the simulation is being
                 rendered. I used the{" "}
                 <a
+                  aria-label="canvas web api docs"
                   className="text-blue-400"
                   href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
                 >
@@ -269,7 +272,11 @@ const GOL = () => {
                 this challenge resulting in a relatively performant
                 implementation. You can find my first (slightly less performant
                 implementation){" "}
-                <a className="text-blue-400" href="/game-of-life">
+                <a
+                  aria-label="other implementation"
+                  className="text-blue-400"
+                  href="/game-of-life"
+                >
                   here
                 </a>
                 .

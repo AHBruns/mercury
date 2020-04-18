@@ -9,6 +9,7 @@ export default ({ data, projects }) => {
     <div className="relative z-50">
       <nav className="sticky top-0 left-0 right-0 z-20 flex flex-wrap p-3 bg-gray-900">
         <button
+          aria-label="menu"
           className="z-20 flex items-center justify-center p-3 m-3 text-gray-100 transition-all duration-1000 ease-in-out transform bg-gray-800 rounded-md focus:outline-none hover:rounded-full hover:rotate-180 focus:bg-gray-700"
           onClick={() => setMenuIsOpen(!menuIsOpen)}
         >
@@ -58,6 +59,7 @@ export default ({ data, projects }) => {
           {data.map((item) => (
             <Link href={item.href} key={JSON.stringify(item)}>
               <a
+                aria-label={item.text}
                 key={JSON.stringify(item)}
                 onClick={() => setMenuIsOpen(!menuIsOpen)}
                 className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:outline-none focus:bg-gray-700 focus:text-blue-500 hover:bg-gray-700"
@@ -74,7 +76,7 @@ export default ({ data, projects }) => {
               onBlur={() => setProjectsIsOpen(false)}
               className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:outline-none focus:bg-gray-700 focus:text-blue-500 hover:bg-gray-700"
             >
-              <a key={"Projects"} className="">
+              <a aria-label="projects" key={"Projects"} className="">
                 Projects
               </a>
               <ul
@@ -87,6 +89,7 @@ export default ({ data, projects }) => {
                 {projects.map((item) => (
                   <Link href={item.href} key={JSON.stringify(item)}>
                     <a
+                      aria-label={item.text}
                       key={JSON.stringify(item)}
                       onClick={() => setMenuIsOpen(!menuIsOpen)}
                       className="block px-3 pt-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:outline-none focus:underline focus:text-blue-500 hover:bg-gray-700"

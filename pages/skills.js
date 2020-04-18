@@ -25,6 +25,7 @@ export default ({ skills, tags }) => {
         <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-2xl">
           <div className="flex items-center py-1">
             <button
+              aria-label="open / close"
               className="inline-block pl-1 text-gray-900 focus:outline-none"
               onClick={() => setFilteringIsOpen(!filteringIsOpen)}
             >

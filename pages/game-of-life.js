@@ -127,6 +127,7 @@ export default () => {
             This is an implementation of Conway's Game of Life. The rules can be
             found{" "}
             <a
+              aria-label="game of life rules"
               href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
               className="text-blue-400"
             >
@@ -134,6 +135,7 @@ export default () => {
             </a>
             . My implementation uses the{" "}
             <a
+              aria-label="web workers api"
               href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
               className="text-blue-400"
             >
@@ -145,6 +147,7 @@ export default () => {
             power CPUs.
           </p>
           <button
+            aria-label="respawn"
             className="w-full px-2 py-1 mt-3 text-gray-100 bg-gray-900 rounded-full shadow-md focus:outline-none hover:bg-gray-800"
             onClick={() => {
               window.location.reload(false);

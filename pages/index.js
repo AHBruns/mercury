@@ -9,8 +9,16 @@ export default () => {
         <span className="text-gray-700">Bruns</span>
       </h1>
       <div className="flex p-1 text-gray-900">
-        <a href="https://github.com/AHBruns" target="_blank">
-          <button className="p-1 m-1 bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
+        <a
+          aria-label="github"
+          href="https://github.com/AHBruns"
+          target="_blank"
+          rel="noopener"
+        >
+          <button
+            aria-label="github"
+            className="p-1 m-1 bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -24,8 +32,16 @@ export default () => {
             </svg>
           </button>
         </a>
-        <a href="https://twitter.com/AlexHBruns" target="_blank">
-          <button className="p-1 m-1 bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
+        <a
+          aria-label="twitter"
+          href="https://twitter.com/AlexHBruns"
+          target="_blank"
+          rel="noopener"
+        >
+          <button
+            aria-label="twitter"
+            className="p-1 m-1 bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -40,8 +56,11 @@ export default () => {
           </button>
         </a>
         <Link href="/contact-me">
-          <a>
-            <button className="p-1 m-1 bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
+          <a href="/contact-me" aria-label="contact me">
+            <button
+              aria-label="contact me"
+              className="p-1 m-1 bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
+            >
               <svg
                 width="24"
                 height="24"
@@ -60,8 +79,11 @@ export default () => {
             </button>
           </a>
         </Link>
-        <a href="https://startab.app" target="_blank">
-          <button className="p-1 px-2 m-1 font-semibold bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
+        <a href="https://startab.app" target="_blank" rel="noopener">
+          <button
+            aria-label="star tab"
+            className="p-1 px-2 m-1 font-semibold bg-gray-300 rounded-md hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
+          >
             StarTab
           </button>
         </a>

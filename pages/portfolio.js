@@ -9,8 +9,11 @@ const Section = ({ title, src, github }) => (
     </h1>
     <div className="flex justify-center">
       {github && (
-        <a href={github} target="_blank">
-          <button className="mt-2 mr-2 bg-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:bg-gray-400">
+        <a aria-label="github" href={github} target="_blank">
+          <button
+            aria-label="github"
+            className="mt-2 mr-2 bg-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:bg-gray-400"
+          >
             <svg
               fill="none"
               stroke="currentColor"
@@ -25,31 +28,33 @@ const Section = ({ title, src, github }) => (
           </button>
         </a>
       )}
-      <a>
-        <button
-          className="mt-2 mr-2 bg-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:bg-gray-400"
-          onClick={() =>
-            alert(
-              "Is this site broken? If so, please use my contact page to tell me. Thank you in advance."
-            )
-          }
+      <button
+        aria-label="broken ?"
+        className="mt-2 mr-2 bg-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:bg-gray-400"
+        onClick={() =>
+          alert(
+            "Is this site broken? If so, please use my contact page to tell me. Thank you in advance."
+          )
+        }
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          className="w-8 h-8 p-1"
         >
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            className="w-8 h-8 p-1"
-          >
-            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-          </svg>
-        </button>
-      </a>
+          <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+        </svg>
+      </button>
       {src && (
-        <a href={src} target="_blank">
-          <button className="mt-2 bg-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:bg-gray-400">
+        <a aria-label="source" href={src} target="_blank">
+          <button
+            aria-label="source"
+            className="mt-2 bg-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:bg-gray-400"
+          >
             <svg
               fill="none"
               stroke="currentColor"
