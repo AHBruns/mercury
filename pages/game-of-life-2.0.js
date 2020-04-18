@@ -238,7 +238,7 @@ const GOL = () => {
               overlayOpen ? "" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="flex flex-col items-center justify-center max-w-md px-4 py-6 transition-all duration-1000 ease-in-out bg-gray-100 rounded-lg shadow-2xl">
+            <div className="flex flex-col items-center justify-center max-w-md px-6 py-6 transition-all duration-1000 ease-in-out bg-gray-100 rounded-lg shadow-2xl">
               <h1 className="text-2xl font-semibold tracking-wider text-gray-900">
                 Conway's Game of Life
               </h1>
