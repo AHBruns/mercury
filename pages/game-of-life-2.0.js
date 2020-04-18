@@ -275,7 +275,7 @@ const GOL = () => {
                 .
               </p>
               <button
-                className="px-4 py-2 mt-4 text-gray-100 bg-gray-900 rounded-full shadow-lg hover:bg-gray-800 focus:outline-none focus:bg-gray-700"
+                className="px-4 py-2 mt-6 text-gray-100 bg-gray-900 rounded-full shadow-lg hover:bg-gray-800 focus:outline-none focus:bg-gray-700"
                 onClick={() => {
                   setOverlayOpen(false);
                   setTimeout(() => setOverlayRendered(false), 2000);
