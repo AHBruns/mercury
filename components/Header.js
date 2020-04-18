@@ -58,7 +58,7 @@ export default ({ data, projects }) => {
               <a
                 key={JSON.stringify(item)}
                 onClick={() => setMenuIsOpen(!menuIsOpen)}
-                className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+                className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:outline-none focus:bg-gray-700 focus:text-blue-500 hover:bg-gray-700"
               >
                 {item.text}
               </a>
@@ -68,7 +68,9 @@ export default ({ data, projects }) => {
             <div
               onMouseEnter={() => setProjectsIsOpen(true)}
               onMouseLeave={() => setProjectsIsOpen(false)}
-              className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+              onFocus={() => setProjectsIsOpen(true)}
+              onBlur={() => setProjectsIsOpen(false)}
+              className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:outline-none focus:bg-gray-700 focus:text-blue-500 hover:bg-gray-700"
             >
               <a key={"Projects"} className="">
                 Projects
@@ -85,7 +87,7 @@ export default ({ data, projects }) => {
                     <a
                       key={JSON.stringify(item)}
                       onClick={() => setMenuIsOpen(!menuIsOpen)}
-                      className="block px-3 pt-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+                      className="block px-3 pt-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:outline-none focus:underline focus:text-blue-500 hover:bg-gray-700"
                     >
                       <li className="ml-2 list-disc">{item.text}</li>
                     </a>
