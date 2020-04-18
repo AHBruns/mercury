@@ -76,7 +76,7 @@ export default ({ data, projects }) => {
               <ul
                 className={`transition-all duration-1000 ease-in-out transform ${
                   projectsIsOpen
-                    ? "h-10 scale-y-100 opacity-100"
+                    ? "h-20 scale-y-100 opacity-100"
                     : "h-0 scale-y-0 opacity-0"
                 }`}
               >
@@ -85,7 +85,7 @@ export default ({ data, projects }) => {
                     <a
                       key={JSON.stringify(item)}
                       onClick={() => setMenuIsOpen(!menuIsOpen)}
-                      className="inline-block p-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
+                      className="block px-3 pt-3 font-bold tracking-widest text-blue-500 rounded-md hover:text-blue-400 focus:text-blue-500 hover:bg-gray-700"
                     >
                       <li className="ml-2 list-disc">{item.text}</li>
                     </a>

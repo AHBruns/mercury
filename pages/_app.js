@@ -12,7 +12,10 @@ const staticProps = {
     { text: "Résumé", href: "/alex-bruns-resume.pdf" },
     { text: "Contact Me", href: "/contact-me" },
   ],
-  projects: [{ text: "Conway's Game of Life", href: "/game-of-life" }],
+  projects: [
+    { text: "Conway's Game of Life", href: "/game-of-life" },
+    { text: "Conway's Game of Life 2.0", href: "/game-of-life-2.0" },
+  ],
 };
 
 export default ({ Component, pageProps }) => {
