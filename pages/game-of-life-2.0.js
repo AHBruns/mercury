@@ -234,53 +234,56 @@ const GOL = () => {
             }`}
           ></div>
           <div
-            className={`absolute inset-x-auto flex flex-col items-center justify-center w-full max-w-xl px-4 py-6 m-4 bg-gray-100 rounded-lg shadow-2xl transition-all duration-1000 ease-in-out ${
+            className={`absolute inset-0 p-4 transition-all duration-1000 ease-in-out flex items-center justify-center ${
               overlayOpen ? "" : "opacity-0 pointer-events-none"
             }`}
           >
-            <h1 className="text-2xl font-semibold tracking-wider text-gray-900">
-              Conway's Game of Life
-            </h1>
-            <p className="mt-4 text-justify text-gray-900">
-              Conway's Game of Life is a rather famous cellular automata rule
-              set created by John Horton Conway. The rules can be found on
-              wikipedia{" "}
-              <a
-                className="text-blue-400"
-                href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+            <div className="flex flex-col items-center justify-center max-w-md px-4 py-6 transition-all duration-1000 ease-in-out bg-gray-100 rounded-lg shadow-2xl">
+              <h1 className="text-2xl font-semibold tracking-wider text-gray-900">
+                Conway's Game of Life
+              </h1>
+              <p className="mt-4 text-justify text-gray-900">
+                Conway's Game of Life is a rather famous cellular automata rule
+                set created by John Horton Conway. The rules can be found on
+                wikipedia{" "}
+                <a
+                  className="text-blue-400"
+                  href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+                >
+                  here
+                </a>
+                . Implementing Conway's game of life is a relatively straight
+                forward task. However, niave implementations can have fairly
+                poor performance due to the overhead of rendering the grid at a
+                high frame rate. This is made harder when writing a browser
+                based implementation because browsers don't provide access to
+                the underlying hardware on which the the simulation is being
+                rendered. I used the{" "}
+                <a
+                  className="text-blue-400"
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+                >
+                  Canvas Web API
+                </a>{" "}
+                and serveral transition calculation optimizations to overcome
+                this challenge resulting in a relatively performant
+                implementation. You can find my first (slightly less performant
+                implementation){" "}
+                <a className="text-blue-400" href="/game-of-life">
+                  here
+                </a>
+                .
+              </p>
+              <button
+                className="px-4 py-2 mt-4 text-gray-100 bg-gray-900 rounded-full shadow-lg hover:bg-gray-800 focus:outline-none focus:bg-gray-700"
+                onClick={() => {
+                  setOverlayOpen(false);
+                  setTimeout(() => setOverlayRendered(false), 2000);
+                }}
               >
-                here
-              </a>
-              . Implementing Conway's game of life is a relatively straight
-              forward task. However, niave implementations can have fairly poor
-              performance due to the overhead of rendering the grid at a high
-              frame rate. This is made harder when writing a browser based
-              implementation because browsers don't provide access to the
-              underlying hardware on which the the simulation is being rendered.
-              I used the{" "}
-              <a
-                className="text-blue-400"
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
-              >
-                Canvas Web API
-              </a>{" "}
-              and serveral transition calculation optimizations to overcome this
-              challenge resulting in a relatively performant implementation. You
-              can find my first (slightly less performant implementation){" "}
-              <a className="text-blue-400" href="/game-of-life">
-                here
-              </a>
-              .
-            </p>
-            <button
-              className="px-4 py-2 mt-4 text-gray-100 bg-gray-900 rounded-full shadow-lg hover:bg-gray-800 focus:outline-none focus:bg-gray-700"
-              onClick={() => {
-                setOverlayOpen(false);
-                setTimeout(() => setOverlayRendered(false), 2000);
-              }}
-            >
-              Let's See It In Action
-            </button>
+                Let's See It In Action
+              </button>
+            </div>
           </div>
         </>
       )}

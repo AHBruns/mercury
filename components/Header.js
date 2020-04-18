@@ -49,7 +49,9 @@ export default ({ data, projects }) => {
       </nav>
       <div
         className={`absolute p-3 bg-gray-900 w-full transition-all ease-in-out duration-1000 border-gray-800 border-t-2 border-solid block shadow-2xl transform ${
-          menuIsOpen ? "translate-y-0 -mb-0" : "-translate-y-full -mb-32"
+          menuIsOpen
+            ? "translate-y-0 -mb-0 visible"
+            : "-translate-y-full -mb-32 hidden"
         }`}
       >
         <nav className={`flex flex-col p-3`}>
